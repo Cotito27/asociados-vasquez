@@ -1,0 +1,119 @@
+<script>
+  let imgPreviewStand = '<%= data.image %>';
+</script>
+<div class="card card-body">
+  <form action="#" id="form__body__edit" data-id-item="<%= data.id %>">
+    <h3 class="title__form">Registro de Articulos</h3>
+    <div class="form-group spacing-top">
+      <div class="form-row">
+        <div class="col">
+          <label for="">Nombre</label>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Ingrese Nombre"
+            name="nombre"
+            value="<%= data.name %>"
+            required
+          />
+        </div>
+        <div class="col">
+          <label for="">Descripcion</label>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Ingrese Descripcion"
+            name="descripcion"
+            value="<%= data.desc %>"
+            required
+          />
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="form-row">
+        <div class="col">
+          <label for="">Unidad de medida</label>
+          <input type="text" class="form-control" placeholder="Ingrese Unidad de Medida" name="unid_med" value="<%= data.unid %>" required>
+        </div>
+        <div class="col">
+          <label for="">Marca</label>
+          <input type="text" class="form-control" placeholder="Ingrese Marca" name="marca" value="<%= data.marca %>" required>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="form-row">
+        <div class="col">
+          <label for="">Stock</label>
+          <input type="number" class="form-control" placeholder="Ingrese Stock" name="stock" value="<%= data.stock %>">
+        </div>
+        <div class="col">
+          <label for="">Precio</label>
+          <input type="number" class="form-control" placeholder="Ingrese Precio" name="precio" value="<%= data.precio %>" required>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="form-row">
+        <div class="col">
+          <div class="guide__upload__img">
+            Elija forma de subir la imagen.
+            <!-- <select>
+              <option value="">Por link</option>
+              <option value="">Por escritorio</option>
+            </select> -->
+          </div>
+          <div class="selected__desktop">
+            <input
+              type="radio"
+              id="desktop__select"
+              name="radio__selectUpload"
+              checked
+            />
+            <label for="desktop__select">Subir por archivo</label>
+          </div>
+          <input type="file" id="fileForm" class="d-none" accept="image/*" name="archivo"/>
+          <label class="file__select inputUpFile" for="fileForm">Elija imagen.</label>
+          <div class="selected__link">
+            <input
+              type="radio"
+              id="link__select"
+              name="radio__selectUpload"
+            />
+            <label for="link__select">Subir por link</label>
+          </div>
+          <input
+            type="text"
+            id=""
+            placeholder="Ingrese enlace de imagen"
+            class="form-control inputUpLink"
+            disabled
+          />
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="form-row">
+        <div class="col">
+          <div class="preview__img">
+            <div class="title__preview__img">Previsualización de Imagen:</div>
+            <img
+              class="img-fluid img__view__preview"
+              src="<%= data.image %>"
+              alt=""
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="form-row">
+        <div class="col">
+          <button class="btn btn-primary btnEditData">Editar</button>
+          <a href="/listArticles" class="btn btn-success">Visualizar Reporte</a>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

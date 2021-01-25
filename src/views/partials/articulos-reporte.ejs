@@ -1,0 +1,45 @@
+<div class="card card-body">
+  <h3 class="title__reporte__articulos">
+    Reporte de articulos
+  </h3>
+  <div class="indicator__redirect__register">
+    <a class="btn btn-success" href="/formArticles">
+      Registrar Nuevo
+    </a>
+  </div>
+  <div class="indicator__actions">
+    Seleccione item para poder realizar alguna acción
+  </div>
+  <div class="form-group actions__articles">
+    <button class="btn btn-primary btnEditarArticle">Editar</button>
+    <button class="btn btn-danger btnDeleteArticle">Eliminar</button>
+  </div>
+  <div class="card__results__articulos table-responsive">
+    <table class="table table-bordered">
+      <thead>
+        <tr class="bg-primary text-white">
+          <th>Nombre</th>
+          <th>Descripcion</th>
+          <th>Un. Med.</th>
+          <th>Marca</th>
+          <th>Stock</th>
+          <th>Precio</th>
+          <th>Imagen</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% valArticles.forEach((item) => { %>
+          <tr data-id-item="<%= item._id %>">
+            <td class="name__item"><%= item.nombre %></td>
+            <td class="desc__item"><%= item.descripcion %></td>
+            <td class="unid__item"><%= item.unid_med %></td>
+            <td class="marca__item"><%= item.marca %></td>
+            <td class="stock__item"><%= item.stock %></td>
+            <td class="precio__item"><%= item.precio %></td>
+            <td><img class="img__report__articles" src="<%= item.image %>" alt=""></td>
+          </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  </div>
+</div>
